@@ -1,0 +1,3 @@
+source ~/Desktop/base/code/xdotool/helpers/get_kali_ip
+
+xdotool type --delay 10 "${KALI_IP}"
