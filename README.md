@@ -1,4 +1,4 @@
-# Pentest productivity boon
+# Pentest productivity hack with rofi
 Use Rofi and xdotool to automate typing and run background tasks in Kali. It works in arbitrary applications (RDP session, browser, any shell, etc).
 
 This is skeleton code with a few examples. Everyone is welcome to contribute.
