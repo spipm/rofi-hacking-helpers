@@ -6,7 +6,7 @@ This is skeleton code with a few examples. Everyone is welcome to contribute.
 ## Installation
 - Clone repo to ~/Desktop/base in Kali
   
-`git clone git@github.com:spipm/pentest_productivity.git ~/Desktop/base`
+`git clone git@github.com:spipm/rofi-hackflow-boon.git ~/Desktop/base`
 - Go to `Settings Manager`->`Keyboard`->`Application Shortcuts` and add a shortcut, like Ctrl+Shift+M to:
 
 `/home/kali/Desktop/base/code/xdotool/rofisearch_scripts_menu.sh`
