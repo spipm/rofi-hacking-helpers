@@ -25,7 +25,7 @@ function dir_menu {
 } 
 
 # Set basedir and start there
-BASEDIR=~/Desktop/pentest_productivity/code/xdotool/scripts
+BASEDIR=~/Desktop/base/code/xdotool/scripts
 cd $BASEDIR
 dir_menu $BASEDIR
 
