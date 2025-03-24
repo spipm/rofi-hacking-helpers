@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cmd="ffuf -u http://${HOST}/ -H 'Host: FUZZ.${DOMAIN}' -w /usr/share/dnsrecon/dnsrecon/data/subdomains-top1mil-20000.txt -mc all -ac"
+
+type_command "${cmd}"
+

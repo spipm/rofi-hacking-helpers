@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# convert domain to Distinguished Name format
+DN_DOMAIN=$(echo $DOMAIN | awk -F'.' '{print "DC="$1",DC="$2}')
+
+cmd="LDAPTLS_REQCERT=never ldapsearch -H ldaps://${HOST} -D '${USER}' -w '${PASS}' -LLL -s sub -b '${DN_DOMAIN}' '(objectclass=user)' 'samaccountname' | grep -i samaccountname: | cut -d' ' -f2 > ${SESSION_OUTPUT_DIR}/ldap_users"
+
+type_command "${cmd}"
+
+
+

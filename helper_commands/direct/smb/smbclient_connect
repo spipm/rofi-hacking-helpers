@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cmd="impacket-smbclient \"${DOMAIN}\"/\"${USER}\":'${PASS}'@\"${HOST}\""
+
+type_command "${cmd}"
+

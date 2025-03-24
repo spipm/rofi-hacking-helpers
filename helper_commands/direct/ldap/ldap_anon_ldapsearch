@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="ldapsearch -H "ldap://${HOST}" -x -LLL -s base -b ''"
+
+type_command "$cmd"

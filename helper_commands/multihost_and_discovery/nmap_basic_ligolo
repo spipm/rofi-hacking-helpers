@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="nmap -v -n --unprivileged -T4 -Pn --top-ports 300 -oA ${SESSION_OUTPUT_DIR}/nmap_ligolo $HOST"
+
+type_command "${cmd}"

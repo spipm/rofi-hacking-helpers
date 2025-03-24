@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="docker ps -q | xargs docker inspect -f 'Name: {{.Name}} - IP: {{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}'"
+
+type_command "${cmd}"

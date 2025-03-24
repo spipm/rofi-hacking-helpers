@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Get options for the targets file
+
+
+# Create selection menu
+SELECTED_TARGET=$(cat $TARGETS_FILE | rofi -dmenu -p "Select Target")
+
+if [[ -z "$SELECTED_TARGET" ]]; then
+  exit 0
+fi
+
+# hostnames=$(zenity --entry --title="Add hosts entry" --text="Hostnames:")
+hostnames=$(yad --entry \
+                --title="Add hosts entry" \
+                --text="Hostnames:")
+
+cmd="echo \"$SELECTED_TARGET $hostnames\" | sudo tee -a /etc/hosts"
+type_command "${cmd}"

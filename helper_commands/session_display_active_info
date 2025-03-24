@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+yad \
+  --form \
+  --center \
+  --undecorated \
+  --no-buttons \
+  --on-top \
+  --close-on-unfocus \
+  --borders=20 \
+  --field="HOST:RO" \
+  --field="USER:RO" \
+  --field="PASS:RO" \
+  --field="DOMAIN:RO" \
+  "${HOST}" "${USER}" "${PASS}" "${DOMAIN}"

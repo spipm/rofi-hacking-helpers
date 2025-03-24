@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="nxc smb --log "${SESSION_OUTPUT_DIR}/nxc_log" "${HOST}" -u '' -p ''"
+
+type_command "$cmd"

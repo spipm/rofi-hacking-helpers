@@ -1,0 +1,32 @@
+#!/bin/bash
+
+rm ${SESSION_OUTPUT_DIR}/*
+notify-send "Cleared output dir"
+
+echo "" > $TARGETS_FILE
+notify-send "Cleared targets file"
+
+echo "" > $CUR_TARGET_HOST_FILE
+notify-send "Cleared host file"
+
+echo "" > $CUR_TARGET_USER_FILE
+notify-send "Cleared user file"
+
+echo "" > $CUR_TARGET_PASS_FILE
+notify-send "Cleared pass file"
+
+echo "" > $CUR_TARGET_DOMAIN_FILE
+notify-send "Cleared domain file"
+
+echo "" > $CUR_TARGET_USERS_FILE
+notify-send "Cleared users file"
+
+echo "" > $CUR_TARGET_PASSWDS_FILE
+notify-send "Cleared passwds file"
+
+echo "" > $CUR_TARGET_ACCOUNTS_FILE
+notify-send "Cleared accounts file"
+
+echo "" > $ACTIVE_PLAYBOOK_FILE
+notify-send "Cleared playbook file"
+

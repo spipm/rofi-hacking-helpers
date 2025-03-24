@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Retrieve first line from playbook file
+FIRST_LINE="$(sed -n '1p' "$ACTIVE_PLAYBOOK_FILE")"
+
+type_command "${FIRST_LINE}"
+type_newline
+
+# Remove first line from playbook file
+sed -i '1d' "$ACTIVE_PLAYBOOK_FILE"

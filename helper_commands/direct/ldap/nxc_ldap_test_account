@@ -1,0 +1,3 @@
+#!/bin/bash
+
+type_command "nxc ldap '${HOST}' -u '${USER}'  -p '${PASS}'"

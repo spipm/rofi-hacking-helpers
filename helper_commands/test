@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+type_command "echo $BASEDIR_HELPER ${TARGETS_FILE}"
+type_newline
+
+notify-send "Typing delay is $TYPING_DELAY"
+

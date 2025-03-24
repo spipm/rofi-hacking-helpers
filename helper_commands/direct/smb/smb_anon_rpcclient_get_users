@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# from https://blog.apolloteapot.com/vulnlab-unintended
+
+cmd="rpcclient -U '' -N ${HOST} -c enumdomusers | cut -d'[' -f2 | cut -d']' -f1 | tee ${CUR_TARGET_USERS_FILE}"
+
+type_command "$cmd"
+
+# prevent double entries
+cat ${CUR_TARGET_USERS_FILE} | sort -u > ${CUR_TARGET_USERS_FILE}

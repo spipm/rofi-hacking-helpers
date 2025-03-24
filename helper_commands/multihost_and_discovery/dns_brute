@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="dnsenum --dnsserver $HOST --enum -p 0 -s 0 -f /usr/share/dnsrecon/dnsrecon/data/subdomains-top1mil-20000.txt $DOMAIN"
+
+type_command "${cmd}"

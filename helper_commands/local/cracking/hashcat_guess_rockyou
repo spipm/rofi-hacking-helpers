@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="hashcat -a 0 -O hashes ./wordlists/rockyou.txt"
+
+type_command "${cmd}"

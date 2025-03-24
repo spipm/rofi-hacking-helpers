@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Create selection menu
+SELECTED_TARGET=$(cat $TARGETS_FILE | rofi -dmenu -multi-select -p "Select ip")
+
+if [[ -z "$SELECTED_TARGET" ]]; then
+  exit 0
+fi
+
+# Count how many hostnames were chosen
+TARGET_COUNT=$(echo "$SELECTED_TARGET" | wc -l)
+
+# Write the chosen hostnames to your CUR_TARGETS_FILE
+# (overwrites anything that was there before)
+echo -n "${SELECTED_TARGET}" > "${CUR_TARGET_HOST_FILE}"
+
+# Optional desktop notification
+notify-send "Updated targets (${TARGET_COUNT}) in ${CUR_TARGET_HOST_FILE}"

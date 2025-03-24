@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="nmap -v --open --top-ports 200 -oA ${SESSION_OUTPUT_DIR}/nmap_basic "
+
+type_command "${cmd}"

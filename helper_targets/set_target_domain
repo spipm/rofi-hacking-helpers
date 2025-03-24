@@ -1,0 +1,10 @@
+#!/bin/bash
+
+target_domain=$(yad --entry \
+                --title="Change target domain" \
+                --text="Domain:")
+
+echo -n "${target_domain}" > "${CUR_TARGET_DOMAIN_FILE}"
+
+# Optional desktop notification
+notify-send "Updated target domain (${target_domain}) in ${CUR_TARGET_DOMAIN_FILE}"

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Get options for the targets file
+
+
+GNMAP_FILE="${SESSION_OUTPUT_DIR}/nmap_basic.gnmap"
+notify-send "Extracting from $GNMAP_FILE"
+
+# Check the file exists
+if [[ ! -f "$GNMAP_FILE" ]]; then
+  notify-send "Error: File '$GNMAP_FILE' not found."
+  exit 1
+fi
+
+# Extract hosts that are up as targets
+TARGETS=$(awk '/Status: Up/ { print $2 }' "$GNMAP_FILE")
+
+echo -n "$TARGETS" > $TARGETS_FILE
+
+# Notify user
+TARGET_COUNT=$(echo "$TARGETS" | wc -l)
+notify-send "Extracted $TARGET_COUNT targets from gnmap file"

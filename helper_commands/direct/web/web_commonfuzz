@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="gobuster dir -e -u http://${HOST}/ -w /usr/share/wordlists/dirb/common.txt"
+
+type_command "${cmd}"

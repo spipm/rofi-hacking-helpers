@@ -1,0 +1,4 @@
+#!/bin/bash
+
+type_command "nxc smb '${HOST}' -u '${USER}'  -p '${PASS}' --shares" 
+

