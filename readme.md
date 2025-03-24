@@ -24,7 +24,7 @@ mkdir ~/Desktop/base/code
 git clone https://github.com/spipm/rofi-hacking-helpers.git ~/Desktop/base/code/hacking_helpers
 ```
 - Configure `BASEDIR` in `/init/options.sh`. Note that this repo should exist as `BASEDIR/code/hacking_helpers`
-- Run instal.sh to set shortcuts
+- Run `./install.sh` to set shortcuts
 
 ## What it should look like
 
