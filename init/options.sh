@@ -4,7 +4,7 @@ TYPING_DELAY=0.2          # Delay between rofi screen and typing
 TYPING_CHARACTER_DELAY=0  # Delay between characters
 
 ## Directory options
-BASEDIR=/tmp/share
+BASEDIR=/tmp/share_hacking
 BASEDIR_HELPER=${BASEDIR}/code/hacking_helpers
 BASEDIR_SESSION=${BASEDIR}/session
 SESSION_OUTPUT_DIR=${BASEDIR_SESSION}/raw_output

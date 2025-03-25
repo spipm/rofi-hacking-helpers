@@ -1,8 +1,7 @@
 #!/bin/bash
 
+set_tab_name "cyberchef"
 
-type_command "echo $BASEDIR_HELPER ${TARGETS_FILE}"
-type_newline
 
 notify-send "Typing delay is $TYPING_DELAY"
 

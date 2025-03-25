@@ -1,7 +1,20 @@
 #!/bin/bash
 
-cmd="docker run -it -p 8080:80 ghcr.io/gchq/cyberchef:latest"
+set_tab_name "cyberchef"
 
-type_command "${cmd}"
+sleep 0.5
 
+type_command "docker run --rm --name cyberchef -it ghcr.io/gchq/cyberchef:latest"
+type_newline
 
+split_term_horz
+
+sleep 1.5
+
+type_command "CONTAINER_IP=\$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' cyberchef)"
+type_newline
+
+sleep 0.5
+
+type_command "firefox http://\${CONTAINER_IP}"
+type_newline

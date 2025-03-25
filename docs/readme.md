@@ -19,6 +19,9 @@ Inside the batch scripts one can use the following pre-defined commands.
 type_command <cmd> - Waits for TYPING_DELAY seconds and then types a command with TYPING_CHARACTER_DELAY milliseconds between chars
 type_newline - Type a newline (return key)
 add_playbook_cmd <cmd> - Adds a command to the playbook file
+split_term_horz - split terminal horizontal
+split_term_vert - split terminal vertical
+set_tab_name - set terminal tab name
 ```
 
 ## Playbook
