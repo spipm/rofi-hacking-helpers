@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set_tab_name "bloodhound"
+
+type_command "cd /tmp/share_bigfiles/tools/bloodhound/server"
+type_newline
+
+sleep 0.3
+
+type_command "docker-compose up"
+type_newline
+
+split_term_horz
+
+sleep 0.7
+
+type_command "echo 'wait for \"Server started successfully\"' in the logs above"
+type_newline
+
+type_command "firefox 'http://127.0.0.1:8484/'"
+

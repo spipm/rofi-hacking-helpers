@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cmd="nmap -v -p- -Pn -A -oA ${SESSION_OUTPUT_DIR}/nmap_agressive_hosts -iL $HOSTS_FILE"
+
+type_command "${cmd}"
+

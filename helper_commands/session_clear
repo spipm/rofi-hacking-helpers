@@ -3,7 +3,7 @@
 rm ${SESSION_OUTPUT_DIR}/*
 notify-send "Cleared output dir"
 
-echo "" > $TARGETS_FILE
+echo "" > $HOSTS_FILE
 notify-send "Cleared targets file"
 
 echo "" > $CUR_TARGET_HOST_FILE

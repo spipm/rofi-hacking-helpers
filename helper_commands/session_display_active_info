@@ -13,3 +13,4 @@ yad \
   --field="PASS:RO" \
   --field="DOMAIN:RO" \
   "${HOST}" "${USER}" "${PASS}" "${DOMAIN}"
+

@@ -15,7 +15,7 @@ fi
 # Extract hosts that are up as targets
 TARGETS=$(awk '/Status: Up/ { print $2 }' "$GNMAP_FILE")
 
-echo -n "$TARGETS" > $TARGETS_FILE
+echo -n "$TARGETS" > $HOSTS_FILE
 
 # Notify user
 TARGET_COUNT=$(echo "$TARGETS" | wc -l)

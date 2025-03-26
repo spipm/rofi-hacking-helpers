@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create selection menu
-SELECTED_TARGET=$(cat $TARGETS_FILE | rofi -dmenu -multi-select -p "Select ip")
+SELECTED_TARGET=$(cat $HOSTS_FILE | rofi -dmenu -multi-select -p "Select ip")
 
 if [[ -z "$SELECTED_TARGET" ]]; then
   exit 0

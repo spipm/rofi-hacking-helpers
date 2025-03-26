@@ -1,6 +1,6 @@
 
 ## xdotool opions
-TYPING_DELAY=0.2          # Delay between rofi screen and typing      
+TYPING_DELAY=0.3          # Delay between rofi screen and typing      
 TYPING_CHARACTER_DELAY=0  # Delay between characters
 
 ## Directory options

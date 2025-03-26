@@ -4,7 +4,7 @@
 
 
 # Create selection menu
-SELECTED_TARGET=$(cat $TARGETS_FILE | rofi -dmenu -p "Select Target")
+SELECTED_TARGET=$(cat $HOSTS_FILE | rofi -dmenu -p "Select Target")
 
 if [[ -z "$SELECTED_TARGET" ]]; then
   exit 0

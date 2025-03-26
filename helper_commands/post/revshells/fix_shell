@@ -1,0 +1,51 @@
+#!/bin/bash
+
+: '
+Fix shell to fully interactive shell
+'
+
+# Wait a bit to get focus
+sleep 0.5
+
+python_pty_spawn="if command -v python3 &>/dev/null; then python3 -c 'import pty; pty.spawn(\"/bin/bash\")'; else python -c 'import pty; pty.spawn(\"/bin/bash\")'; fi"
+
+# Run a command on the remote shell to determine if python3 is available
+type_command "${python_pty_spawn}"
+type_newline
+sleep 0.5
+
+xdotool key ctrl+z
+sleep 0.5
+
+type_command "stty raw -echo"
+type_newline
+sleep 1
+
+type_command "fg"
+type_newline
+sleep 1
+
+type_command "export SHELL=bash"
+type_newline
+sleep 1
+
+type_command "export TERM=xterm-256color"
+type_newline
+sleep 1
+
+# Hard coded because rofi isn't loading a terminal environment
+rows=52
+cols=238
+
+type_command "stty rows $rows columns $cols"
+type_newline
+sleep 1
+
+type_command "reset"
+type_newline
+sleep 1
+
+# Run a pty spwan againt to make it fully interactive
+type_command "${python_pty_spawn}"
+type_newline
+sleep 1

